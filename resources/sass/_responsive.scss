@@ -1,0 +1,277 @@
+/* media queries  */
+
+/*
+references; sass/mixins/_resize.scss
+
+
+@mixin col-xs() {
+  @media (max-width: 300px) {
+    @content;
+  }
+}
+@mixin col-sm-down() {
+  @media (min-width: 301px) and (max-width: 479px) {
+    @content;
+  }
+}
+@mixin col-md-down() {
+  @media (min-width: 300px) and (max-width: 784px) {
+    @content;
+  }
+}
+@mixin col-md-up() {
+  @media (min-width: 785px) {
+    @content;
+  }
+}
+@mixin col-lg() {
+  @media (min-width: 1125px) and (max-width: 1740px){
+    @content;
+  }
+}
+@mixin col-xl() {
+  @media (min-width: 1741px) {
+    @content;
+  }
+}
+*/
+
+.nav-collapse {
+  @include col-sm-down {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+.row {
+  @include col-lg {
+    margin-left: -30px;
+    *zoom: 1;
+  }
+}
+
+.nav-collapse.collapse {
+  @include col-md-up {
+    height: auto !important;
+    overflow: visible !important;
+  }
+}
+
+button, a, li, p, th, td, span, body, .btn, div *, .collapsible-header * {
+
+  @include col-xs() {
+    font-size: .7rem;
+    border: 1px solid green;
+  }
+  @include col-sm-down() {
+    font-size: .8rem;
+
+  }
+  @include col-md-down() {
+    font-size: .9rem;
+
+  }
+  @include col-md-up() {
+    font-size: 1rem;
+
+  }
+  @include col-lg() {
+    font-size: 1rem;
+
+  }
+  @include col-xl() {
+    font-size: 1rem;
+    border: 1px solid blue;
+  }
+}
+
+h1 {
+  margin: 0 0 1.5rem;
+  @include col-xs() {
+    font-size: .9rem;
+  }
+  @include col-sm-down() {
+    font-size: .9rem;
+  }
+  @include col-md-down() {
+    font-size: 1rem;
+  }
+  @include col-md-up() {
+    font-size: 1.5rem;
+  }
+  @include col-lg() {
+    font-size: 1.7rem;
+  }
+  @include col-xl() {
+    font-size: 1.75rem;
+  }
+}
+
+h2 {
+  margin: 1rem 0 1.5rem;
+  @include col-xs() {
+    font-size: .9rem;
+  }
+  @include col-sm-down() {
+    font-size: .9rem;
+  }
+  @include col-md-down() {
+    font-size: .75rem;
+  }
+  @include col-md-up() {
+    font-size: 1.25rem;
+  }
+  @include col-lg() {
+    font-size: 1.4rem;
+  }
+  @include col-xl() {
+    font-size: 1.5rem;
+  }
+}
+
+h3 {
+  margin: 1rem 0 1.5rem;
+  @include col-xs() {
+    font-size: .9rem;
+  }
+  @include col-sm-down() {
+    font-size: .9rem;
+  }
+  @include col-md-down() {
+    font-size: .9rem;
+  }
+  @include col-md-up() {
+    font-size: 1.1rem;
+  }
+  @include col-lg() {
+    font-size: 1.25rem;
+  }
+  @include col-xl() {
+    font-size: 1.35rem;
+  }
+}
+
+h4, legend {
+  margin: .7rem 0 .7rem;
+  font-weight: bold;
+  @include col-xs() {
+    font-size: .8rem;
+  }
+  @include col-sm-down() {
+    font-size: .8rem;
+  }
+  @include col-md-down() {
+    font-size: .8rem;
+  }
+  @include col-md-up() {
+    font-size: 1rem;
+  }
+  @include col-lg() {
+    font-size: 1.2rem;
+  }
+  @include col-xl() {
+    font-size: 1.2rem;
+  }
+}
+
+.medium-up {
+  @include col-md-down() {
+    display: none;
+  }
+  @include col-sm-down() {
+    display: none;
+  }
+}
+
+.hide-for-small {
+  @include col-sm-down() {
+    display: none;
+  }
+}
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-weight: 400;
+  text-align: center;
+  touch-action: manipulation;
+  cursor: pointer;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 4px 8px;
+  font-size: 1rem;
+  line-height: 1.22222;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  @include col-xs() {
+    font-size: .8rem;
+  }
+  @include col-sm-down() {
+    font-size: .9rem;
+  }
+  @include col-md-down() {
+    font-size: .9rem;
+  }
+  @include col-md-up() {
+    font-size: 1rem;
+  }
+  @include col-lg() {
+    font-size: 1rem;
+  }
+  @include col-xl() {
+    font-size: 1rem;
+  }
+}
+/*
+
+
+h1{
+  font-size: 1.6rem;
+  margin: 0 0 1rem;
+  @include MQ(XS) {
+    font-size: 0.9rem;
+  }
+  @include MQ(S) {
+    font-size: .9rem;
+  }
+  @include MQ(M) {
+    font-size: 1rem;
+  }
+  @include MQ(L) {
+    font-size: 1.4rem;
+  }
+  @include MQ(XL) {
+    font-size: 1.4rem;
+  }
+  @include MQ(XXL) {
+    font-size: 1.5rem;
+  }
+
+}
+
+
+
+
+#canvas-cont {
+  padding:10px;
+  @include MQ(XS) {
+*//*    border:4px dashed palegreen;*//*
+  }
+  @include MQ(S) {
+*//*    border:4px dashed blue;*//*
+  }
+  @include MQ(M) {
+*//*    border:2px dashed pink;*//*
+  }
+  @include MQ(L)  {
+*//*    border:2px dashed purple;*//*
+  }
+  @include MQ(XL)  {
+*//*    border:2px dashed navajowhite;*//*
+  }
+
+}
+
+*/

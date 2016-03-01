@@ -1,0 +1,57 @@
+
+// Globals folder is reserved for things like mixin declarations, functions & variables.
+
+.centered { text-align: center; }
+.middle {
+  margin:0 auto;
+  float: none !important;
+}
+.clear {
+  clear: both !important;
+  height: 1px !important;
+  overflow: hidden !important;
+  float: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  border: none !important;
+  background: none !important;
+  list-style: none !important;
+  min-height: 0 !important;
+}
+
+
+/* General: Utility Classes
+-------------------------------------------------------------- */
+// Miscellaneous useful HTML classes
+.left { float: left !important; }
+.right { float: right !important; }
+
+.hide {  display: none !important; }
+[class*="width-"] {
+  float: left;
+  padding: 0;
+  position: relative;
+  width: 100%;
+}
+
+.mt10 {
+  margin-top:12px !important;
+}
+
+/*
+.hide-for-large {
+  @include media(large-up) {
+    display: none;
+  }
+}
+.hide-for-small {
+  @include media(small-up) {
+    display: none;
+  }
+  @include media(large-up) {
+    display: block;
+  }
+}
+*/
+
