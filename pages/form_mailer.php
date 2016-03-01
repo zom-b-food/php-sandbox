@@ -31,7 +31,7 @@ $success = mail($mailto, $emailSubject, $body, $headers); // This tells the serv
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Formzzzz Mailer</title>
+<title>Form Mailer</title>
 </head>
 
 <body>    form_mailer.php
