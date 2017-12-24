@@ -13,7 +13,7 @@ table.social img {
 	padding:4px;
 }
 </style>
-<c:set var="assetPath" value="${contextPath}/resources"/>
+
 
 <div class="padtop10">
 	<div style="height: 100px; width: 100%; margin-top: -10px; background-color: #cccccc; border-bottom:10px solid #000000;">
@@ -21,7 +21,7 @@ table.social img {
 		<div style="margin-right: 20%; float: right;">
 			<table class="social">
 				<tr>
-					<td><img src="${assetPath}/images/ui/socialmedia10.24.13.jpg" class="img-responsive social" border="0" usemap="#Map"/></td>
+					<td>q<img src="/resources/images/ui/alert.png" class="img-responsive social" border="0" usemap="#Map"/>q</td>
 				</tr>
 			</table>
 		</div>

@@ -1,96 +1,91 @@
-<html>
+
+<!DOCTYPE html>
+
+<html lang="en">
+
 <head>
-<title>
-Quercus&#153; Start Page
-</title>
 
-<!--
-<?php
+    <script type="text/javascript" src="./resources/js/jquery-2.1.1.js"></script>
+    <script type="text/javascript" src="./resources/js/jquery.html5Loader.min.js"></script>
+    <script type="text/javascript">
+        /*
+         $(function () {
+         $.preloadimg = function() {
+         for (var i = 0; i < arguments.length; i++) {
+         $("<img />").attr("src", arguments[i]);
+         }
+         }
+         });
 
-  function quercus_test()
-  {
-    return function_exists("quercus_version");
-  }
 
-?>
--->
+         $.preloadimg("images/background.jpg");
+         */
+        var t = (new Date).getTime();
+        var files = [
 
-<style type="text/css">
-.message {
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid blue;
-  background: #CCCCCC;
-}
 
-.footer {
-  font-size: small;
-  font-style: italic;
-}
+            {
+                "type":"CSS",
+                "source":"./resources/compiled/php-sandbox.min.css",
+                "size":5.5
+            },
 
-#failure {
-    <?php echo "display: none;"; ?> 
-}
+            {
+                "type":"SCRIPT",
+                "source":"./resources/compiled/php-sandbox.min.js",
+                "size":5.8,
+                "stopExecution":false
+            }
+        ];
 
-#failure_default_interpreter {
-    display: none;
-    <?php if (! quercus_test()) echo "display: block;"; ?> 
-}
+        $.html5Loader({
+            filesToLoad: {"files": files},
+            stopExecution: true,
+            onElementLoaded: function ( obj, elm ) {
+                var source = obj.source.split('/');
+                console.log( source[source.length-1].split('.js')[0] );
+            },
+            onComplete: function () {
+                console.log("%c\n All assets loaded! ", "background: #222; color: #bada55");
+            }
+        });
 
-#success_pro {
-    display: none;
-    <?php if (quercus_is_pro() && quercus_test()) echo "display: block;"; ?> 
-}
 
-#success_open_source {
-    display: none;
-    <?php if (! quercus_is_pro() && quercus_test()) echo "display: block;"; ?> 
-}
-</style>
+        function autotab(original, destination) {
+            if (original.getAttribute && original.value.length == original.getAttribute("maxlength"))destination.focus()
+        }
+
+        $(window).load(function(){
+            $('#dvLoading').fadeOut(3400);
+        });
+    </script>
+    <style type="text/css">
+        #dvLoading
+        {
+            background:#fff url(resources/images/ui/bx_loader.gif) no-repeat center center;
+            height: 200px;
+            width: 200px;
+            position: fixed;
+            z-index: 1000;
+            left: 50%;
+            top: 50%;
+            margin: -25px 0 0 -25px;
+        }
+    </style>
 </head>
 
 <body>
-<a href="http://www.caucho.com"><img border="0" src="resources/images/ui/caucho-white.jpg" alt="Caucho Technology"></a>
-<h1><?php echo '<p>Hello World (written in php on a php page).</p>'; ?> </h1>
-<p>
-Testing for Quercus&#153;...
-</p>
+<div id="dvLoading"></div>
 
-<div class="message" id="failure">
-PHP files are not being interpreted by Quercus&#153;.
-</div>
-
-<div class="message" id="failure_default_interpreter">
-PHP is being interpreted, but not by Quercus&#153;!  Please check your configuration.
-</div>
-
-<div class="message" id="success_pro">
-<img src="images/dragonfly-tiny.png" alt="Caucho Dragonfly Logo">Congratulations!  Quercus&#153; <?php if (quercus_test()) echo quercus_version(); ?> is compiling PHP pages.  Have fun!
-</div>
-
-<div class="message" id="success_open_source">
-<img src="images/dragonfly-tiny.png" alt="Caucho Dragonfly Logo">Congratulations!  Quercus&#153; <?php if (quercus_test()) echo quercus_version(); ?> is interpreting PHP pages.  Have fun!
-</div>
-
-<div>
-Documentation is available at <a href="http://www.caucho.com">http://www.caucho.com</a>
-</div>
-
-<div>
-The README is available <a href="README">here</a>.
-</div>
-
-<hr/>
-
-<div class="footer">
-Copyright &copy; 1998-2009
-<a href="http://www.caucho.com">Caucho Technology, Inc</a>. 
-All rights reserved.<br/>
-
-Resin <sup><font size="-1">&#174;</font></sup> is a registered trademark,
-and Quercus<sup>tm</sup>, Amber<sup>tm</sup>, and Hessian<sup>tm</sup>
-are trademarks of Caucho Technology.
-</div>
 </body>
+<script type="text/javascript">
+    $(window).load(function () {
+        window.setTimeout(function () {
+            window.location.href = "pages/index.php";
+        }, 3400)
+    });
 
+
+
+</SCRIPT>
 </html>
